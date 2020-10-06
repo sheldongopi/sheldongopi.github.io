@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="71890f3d-e879-4565-a9c6-b52670e606cc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Start Scherm.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/Start Scherm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Start Scherm.html" beforeDir="false" afterPath="$PROJECT_DIR$/Html/Start Scherm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/Start Scherm.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/Index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html/Start Scherm.html" beforeDir="false" afterPath="$PROJECT_DIR$/Html/Index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +65,7 @@
       <updated>1600344558139</updated>
       <workItem from="1600344559209" duration="1737000" />
       <workItem from="1600346300237" duration="917000" />
+      <workItem from="1602006199429" duration="855000" />
     </task>
     <servers />
   </component>
@@ -65,5 +82,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
