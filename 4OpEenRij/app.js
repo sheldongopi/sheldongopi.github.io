@@ -59,24 +59,29 @@ const handleCellMouseOver = (e)=> {
     if (blueIsNext) {
         topCell.classList.add('blue');
     } else {
-      topCell.classList.add('pink');
+        topCell.classList.add('pink');
     }
     //Als je nu hovert over de cells dan verschijnt er een kleur op de 0 rij
+};
+const handleCellMouseOut = (e)=> {
+    const cell = e.target;
+    const [rowIndex, colIndex] = getCellLocation(cell);
 
+    const topCell = topCells[colIndex]
+    topCell.classList.remove('blue')
+    topCell.classList.remove('pink')
+    //Nu elke keer dat je Hovert over het bord dan zal het fiche ook weg gaan
 
-
-
-
+//Console Log
     const classlist = cell.classList;
     console.log([...classlist]);
     //elke keer als je over een cell gaat dan zie je dat in de console log netjes naast elkaar.
 };
 
-
-
 // Even Listeners roepen de functie aan
 for(const row of rows) {
     for (const cell of row) {
         cell.addEventListener('mouseover', handleCellMouseOver);
+        cell.addEventListener('mouseout', handleCellMouseOut);
     }
 }
