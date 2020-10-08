@@ -37,9 +37,9 @@ const getClassListArray = (cell) => {
 }
 const getCellLocation = (cell) => {
     const classList = getClassListArray(cell);
-    //dit loopt door elke klasse in de classlistarray en het zal de classname terug geven die de "row" en "col" class heeft
-    const rowClass = classList.find(className=> className.includes('row'));
-    const colClass = classList.find(className=> className.includes('col'));
+    //dit loopt door elke klasse in de classlistarray en het zal de className terug geven die de "row" en "col" class heeft
+    const rowClass = classList.find(className => className.includes('row'));
+    const colClass = classList.find(className => className.includes('col'));
     const rowIndex = rowClass[4];
     const colIndex = colClass[4];
     const rowNumber = parseInt(rowIndex)
@@ -47,17 +47,32 @@ const getCellLocation = (cell) => {
     //de parse functie zorgt ervoor dat een string argument een integer wordt
 
     return [rowNumber, colNumber];
-    //nu krijgen we een array met een rij nummer en een kolom nummer.
+    //nu krijgen we een array met een rowNumber en een kolomNummer bij de console log.
 };
 
-// Event handlers zorgen dat de functies kunnen gecodeert worden
+// Event handlers zorgen dat de functies kunnen gezien/gecodeert worden
 const handleCellMouseOver = (e)=> {
     const cell = e.target;
+    const [rowIndex, colIndex] = getCellLocation(cell);
+
+    const topCell = topCells[colIndex];
+    if (blueIsNext) {
+        topCell.classList.add('blue');
+    } else {
+      topCell.classList.add('pink');
+    }
+    //Als je nu hovert over de cells dan verschijnt er een kleur op de 0 rij
+
+
+
+
 
     const classlist = cell.classList;
     console.log([...classlist]);
-    //elke keer als je over een cell gaat dan zie je dat in de console log
+    //elke keer als je over een cell gaat dan zie je dat in de console log netjes naast elkaar.
 };
+
+
 
 // Even Listeners roepen de functie aan
 for(const row of rows) {

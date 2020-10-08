@@ -23,7 +23,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -38,7 +38,7 @@
       <workItem from="1602089514477" duration="3000" />
       <workItem from="1602089523362" duration="1018000" />
       <workItem from="1602143075305" duration="6114000" />
-      <workItem from="1602152274986" duration="2900000" />
+      <workItem from="1602152274986" duration="4673000" />
     </task>
     <servers />
   </component>
@@ -50,5 +50,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="819" y="242" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602143886635" />
+    <state x="611" y="181" key="SettingsEditor" timestamp="1602156718560">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="611" y="181" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602156718560" />
+    <state x="1143" y="317" width="672" height="678" key="search.everywhere.popup" timestamp="1602156716586">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1143" y="317" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602156716586" />
   </component>
 </project>
