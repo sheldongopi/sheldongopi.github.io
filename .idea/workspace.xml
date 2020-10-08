@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="709896ce-8577-4bcb-98c3-af9c79068dc4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/4OpEenRij/Index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4OpEenRij/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/4-OpEenRij.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sheldongopi.github.io.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/Index.css" beforeDir="false" afterPath="$PROJECT_DIR$/4OpEenRij/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html/Index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4OpEenRij/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/4OpEenRij/Index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4OpEenRij/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/4OpEenRij/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4OpEenRij/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/4OpEenRij/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +39,17 @@
       <workItem from="1602087551226" duration="660000" />
       <workItem from="1602089514477" duration="3000" />
       <workItem from="1602089523362" duration="1018000" />
+      <workItem from="1602143075305" duration="3327000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="819" y="242" key="RollbackChangesDialog" timestamp="1602143886635">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="819" y="242" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602143886635" />
   </component>
 </project>
