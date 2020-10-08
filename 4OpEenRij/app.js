@@ -1,7 +1,7 @@
 // DOM Elementen
 const allCells = document.querySelectorAll('.cell:not(.row-top)');
 const topCells = document.querySelectorAll('.cell.row-top');
-const opniewButton = document.querySelector('.opnieuw');
+const opnieuwButton = document.querySelector('.opnieuw');
 const stoppenButton = document.querySelector('.stoppen')
 const statusSpan = document.querySelector('.status');
 
@@ -26,17 +26,40 @@ const row4 = [allCells[28], allCells[29], allCells[30], allCells[31], allCells[3
 const row5 = [allCells[35], allCells[36], allCells[37], allCells[38], allCells[39], allCells[40], allCells[41]];
 const rows = [row0, row1, row2, row3, row4, row5, topRow];
 
-// variables
+// variabelen
 let gameIsLive = true
 let blueIsNext = true
 
-// Event handlers
+//Functions
+const getClassListArray = (cell) => {
+    const classlist = cell.classList;
+    return [...classlist];
+}
+const getCellLocation = (cell) => {
+    const classList = getClassListArray(cell);
+    //dit loopt door elke klasse in de classlistarray en het zal de classname terug geven die de "row" en "col" class heeft
+    const rowClass = classList.find(className=> className.includes('row'));
+    const colClass = classList.find(className=> className.includes('col'));
+    const rowIndex = rowClass[4];
+    const colIndex = colClass[4];
+    const rowNumber = parseInt(rowIndex)
+    const colNumber = parseInt(rowIndex)
+    //de parse functie zorgt ervoor dat een string argument een integer wordt
+
+    return [rowNumber, colNumber];
+    //nu krijgen we een array met een rij nummer en een kolom nummer.
+};
+
+// Event handlers zorgen dat de functies kunnen gecodeert worden
 const handleCellMouseOver = (e)=> {
-    console.log(e);
+    const cell = e.target;
+
+    const classlist = cell.classList;
+    console.log([...classlist]);
     //elke keer als je over een cell gaat dan zie je dat in de console log
 };
 
-// Even Listeners
+// Even Listeners roepen de functie aan
 for(const row of rows) {
     for (const cell of row) {
         cell.addEventListener('mouseover', handleCellMouseOver);
