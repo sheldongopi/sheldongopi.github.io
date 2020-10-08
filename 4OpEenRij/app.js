@@ -25,3 +25,20 @@ const row3 = [allCells[21], allCells[22], allCells[23], allCells[24], allCells[2
 const row4 = [allCells[28], allCells[29], allCells[30], allCells[31], allCells[32], allCells[33], allCells[34]];
 const row5 = [allCells[35], allCells[36], allCells[37], allCells[38], allCells[39], allCells[40], allCells[41]];
 const rows = [row0, row1, row2, row3, row4, row5, topRow];
+
+// variables
+let gameIsLive = true
+let blueIsNext = true
+
+// Event handlers
+const handleCellMouseOver = (e)=> {
+    console.log(e);
+    //elke keer als je over een cell gaat dan zie je dat in de console log
+};
+
+// Even Listeners
+for(const row of rows) {
+    for (const cell of row) {
+        cell.addEventListener('mouseover', handleCellMouseOver);
+    }
+}
