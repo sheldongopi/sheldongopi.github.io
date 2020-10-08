@@ -43,7 +43,7 @@ const getCellLocation = (cell) => {
     const rowIndex = rowClass[4];
     const colIndex = colClass[4];
     const rowNumber = parseInt(rowIndex)
-    const colNumber = parseInt(rowIndex)
+    const colNumber = parseInt(colIndex)
     //de parse functie zorgt ervoor dat een string argument een integer wordt
 
     return [rowNumber, colNumber];
