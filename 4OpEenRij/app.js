@@ -50,7 +50,23 @@ const getCellLocation = (cell) => {
     //nu krijgen we een array met een rowNumber en een kolomNummer bij de console log.
 };
 
-// Event handlers zorgen dat de functies kunnen gezien/gecodeert worden
+const getFirstOpenCellForColumn = (colIndex) => {
+    const column = columns[colIndex]
+    const columnWithoutTop = column.slice(0, 6)
+    //Dit zorgt ervoor dat het bekijkt of de colums leeg zijn en met slice haal ik de columnTop weg omdat dat niet nodig is
+    for (const cell of columnWithoutTop) {
+        const classList = getClassListArray(cell)
+        if (!classList.includes('blue') && !classList.includes('pink')){
+            return cell;
+        //de loop kijk als de vakjes niet pink of blue zijn dan is de cell open.
+        }
+    }
+    return null;
+    //als de column vol is dan stopt de loop
+};
+
+
+// Event handlers. Zorgen dat de functies kunnen gezien/gecodeert worden
 const handleCellMouseOver = (e)=> {
     const cell = e.target;
     const [rowIndex, colIndex] = getCellLocation(cell);
@@ -71,17 +87,25 @@ const handleCellMouseOut = (e)=> {
     topCell.classList.remove('blue')
     topCell.classList.remove('pink')
     //Nu elke keer dat je Hovert over het bord dan zal het fiche ook weg gaan
+};
+const handleCellClick = (e)=> {
+    const cell = e.target;
+    const [rowIndex, colIndex] = getCellLocation(cell);
+    getFirstOpenCellForColumn(colIndex);
+    //Nu elke keer als je klikt op een cell dan komt dat in de console log te staan
 
 //Console Log
     const classlist = cell.classList;
     console.log([...classlist]);
-    //elke keer als je over een cell gaat dan zie je dat in de console log netjes naast elkaar.
+    //De ...classlist logt alles netjes naast elkaar.
 };
 
-// Even Listeners roepen de functie aan
+
+// Even Listeners. Roepen de functie aan
 for(const row of rows) {
     for (const cell of row) {
         cell.addEventListener('mouseover', handleCellMouseOver);
         cell.addEventListener('mouseout', handleCellMouseOut);
+        cell.addEventListener('click', handleCellClick);
     }
 }
