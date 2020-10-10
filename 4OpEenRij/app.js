@@ -91,8 +91,15 @@ const handleCellMouseOut = (e)=> {
 const handleCellClick = (e)=> {
     const cell = e.target;
     const [rowIndex, colIndex] = getCellLocation(cell);
-    getFirstOpenCellForColumn(colIndex);
-    //Nu elke keer als je klikt op een cell dan komt dat in de console log te staan
+
+    const openCell = getFirstOpenCellForColumn(colIndex);
+
+    if (!openCell) return;
+
+    openCell.classList.add(blueIsNext ? 'blue' : 'pink');
+    //Nu wanneer je klikt dan gaat het eerste blauwe fiche naar de bodem van het bord
+    blueIsNext = !blueIsNext;
+    //Dit reversed de kleur van blauw naar roze.
 
 //Console Log
     const classlist = cell.classList;
