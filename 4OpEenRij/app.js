@@ -128,6 +128,7 @@ const checkStatusOfGame = (cell) => {
 
 // Event handlers. Zorgen dat de functies kunnen gezien/gecodeert worden
 const handleCellMouseOver = (e)=> {
+    if (!gameIsLive) return;
     const cell = e.target;
     const [rowIndex, colIndex] = getCellLocation(cell);
 
@@ -149,6 +150,7 @@ const handleCellMouseOut = (e)=> {
 };
 
 const handleCellClick = (e)=> {
+    if (!gameIsLive) return;
     const cell = e.target;
     const [rowIndex, colIndex] = getCellLocation(cell);
 
@@ -166,10 +168,11 @@ const handleCellClick = (e)=> {
 
     clearColorFromTop(colIndex)
 
-    const topCell = topCells[colIndex];
-    topCell.classList.add(blueIsNext ? 'blue' : 'pink');
-    //Nadat het eerste fiche is geplaatst dan zal je nu het volgende fiche meteen zien boven het bord
-
+    if(gameIsLive) {
+        const topCell = topCells[colIndex];
+        topCell.classList.add(blueIsNext ? 'blue' : 'pink');
+        //Nadat het eerste fiche is geplaatst dan zal je nu het volgende fiche meteen zien boven het bord
+    }
 //Console Log
     const classlist = cell.classList;
     console.log([...classlist]);
