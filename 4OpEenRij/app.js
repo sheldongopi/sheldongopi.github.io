@@ -185,3 +185,16 @@ for(const row of rows) {
         cell.addEventListener('click', handleCellClick);
     }
 }
+
+opnieuwButton.addEventListener('click', () => {
+    for (const row of rows) {
+        for (const cell of row) {
+            cell.classList.remove('pink')
+            cell.classList.remove('blue')
+            cell.classList.remove('win')
+        }
+    }
+    gameIsLive = true;
+    blueIsNext = true;
+    statusSpan.textContent = '';
+});
