@@ -81,6 +81,17 @@ const getColorOfCell = (cell)=> {
     return null
 };
 
+const checkWinningCells = (cells) => {
+    if (cells.length < 4) return;
+
+    gameIsLive = false;
+    for (const cell of cells) {
+        cell.classList.add('win');
+    }
+    statusSpan.textContent = `${blueIsNext ? 'Blauw' : 'Roze'} heeft gewonnen!`
+    //Win tekst als er 4 naast elkaar van dezelfde kleur komen.
+};
+
 const checkStatusOfGame = (cell) => {
     const color = getColorOfCell(cell)
     if(!color) return;
@@ -90,26 +101,30 @@ const checkStatusOfGame = (cell) => {
     let winningCells = [cell];
     let rowToCheck = rowIndex;
     let colToCheck = colIndex - 1;
-    while (colToCheck > 0){
+    while (colToCheck >= 0) {
         const cellToCheck = rows[rowToCheck][colToCheck];
         if (getColorOfCell(cellToCheck) === color) {
             winningCells.push(cellToCheck);
             colToCheck--;
         }   else {
             break;
-        }
+        }//Dit checkt op je van links naar rechts horizontaal kan winnen
     }
     colToCheck = colIndex + 1;
-    while (colToCheck < 6){
+    while (colToCheck <= 6) {
         const cellToCheck = rows[rowToCheck][colToCheck];
         if (getColorOfCell(cellToCheck) === color) {
             winningCells.push(cellToCheck);
+            //De methode push voegt nieuwe items toe aan het einde van een array en retourneert de nieuwe lengte.
             colToCheck++;
         }   else {
             break;
-        }
+        }//Dit checkt op je van rechts naar links horizontaal kan winnen
     }
+    checkWinningCells(winningCells);
 };
+
+
 
 // Event handlers. Zorgen dat de functies kunnen gezien/gecodeert worden
 const handleCellMouseOver = (e)=> {
@@ -124,6 +139,7 @@ const handleCellMouseOver = (e)=> {
     }
     //Als je nu hovert over de cells dan verschijnt er een kleur op de 0 rij
 };
+
 const handleCellMouseOut = (e)=> {
     const cell = e.target;
     const [rowIndex, colIndex] = getCellLocation(cell);
@@ -131,6 +147,7 @@ const handleCellMouseOut = (e)=> {
     clearColorFromTop(colIndex);
     //Nu elke keer dat je Hovert over het bord dan zal het fiche ook weg gaan
 };
+
 const handleCellClick = (e)=> {
     const cell = e.target;
     const [rowIndex, colIndex] = getCellLocation(cell);
