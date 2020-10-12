@@ -69,6 +69,7 @@ const clearColorFromTop = (colIndex) => {
     const topCell = topCells[colIndex];
     topCell.classList.remove('blue')
     topCell.classList.remove('pink');
+    //functie zorgt ervoor dat het top fiche verdwijnt voor sommige eventhandlers
 
 };
 
@@ -102,9 +103,15 @@ const handleCellClick = (e)=> {
 
     openCell.classList.add(blueIsNext ? 'blue' : 'pink');
     //Nu wanneer je klikt dan gaat het eerste blauwe fiche naar de bodem van het bord
+
     blueIsNext = !blueIsNext;
     //Dit reversed de kleur van blauw naar roze.
+
     clearColorFromTop(colIndex)
+
+    const topCell = topCells[colIndex];
+    topCell.classList.add(blueIsNext ? 'blue' : 'pink');
+    //Nadat het eerste fiche is geplaatst dan zal je nu het volgende fiche meteen zien boven het bord
 
 //Console Log
     const classlist = cell.classList;
