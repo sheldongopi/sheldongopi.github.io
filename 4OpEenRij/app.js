@@ -65,6 +65,12 @@ const getFirstOpenCellForColumn = (colIndex) => {
     //als de column vol is dan stopt de loop
 };
 
+const clearColorFromTop = (colIndex) => {
+    const topCell = topCells[colIndex];
+    topCell.classList.remove('blue')
+    topCell.classList.remove('pink');
+
+};
 
 // Event handlers. Zorgen dat de functies kunnen gezien/gecodeert worden
 const handleCellMouseOver = (e)=> {
@@ -83,9 +89,7 @@ const handleCellMouseOut = (e)=> {
     const cell = e.target;
     const [rowIndex, colIndex] = getCellLocation(cell);
 
-    const topCell = topCells[colIndex]
-    topCell.classList.remove('blue')
-    topCell.classList.remove('pink')
+    clearColorFromTop(colIndex);
     //Nu elke keer dat je Hovert over het bord dan zal het fiche ook weg gaan
 };
 const handleCellClick = (e)=> {
@@ -100,6 +104,7 @@ const handleCellClick = (e)=> {
     //Nu wanneer je klikt dan gaat het eerste blauwe fiche naar de bodem van het bord
     blueIsNext = !blueIsNext;
     //Dit reversed de kleur van blauw naar roze.
+    clearColorFromTop(colIndex)
 
 //Console Log
     const classlist = cell.classList;
