@@ -73,6 +73,44 @@ const clearColorFromTop = (colIndex) => {
 
 };
 
+const getColorOfCell = (cell)=> {
+    const classList = getClassListArray(cell);
+    if (classList.includes('blue')) return 'blue';
+    if (classList.includes('pink')) return 'pink';
+
+    return null
+};
+
+const checkStatusOfGame = (cell) => {
+    const color = getColorOfCell(cell)
+    if(!color) return;
+    const [rowIndex, colIndex] = getCellLocation(cell);
+
+    //Check Horizontaal
+    let winningCells = [cell];
+    let rowToCheck = rowIndex;
+    let colToCheck = colIndex - 1;
+    while (colToCheck > 0){
+        const cellToCheck = rows[rowToCheck][colToCheck];
+        if (getColorOfCell(cellToCheck) === color) {
+            winningCells.push(cellToCheck);
+            colToCheck--;
+        }   else {
+            break;
+        }
+    }
+    colToCheck = colIndex + 1;
+    while (colToCheck < 6){
+        const cellToCheck = rows[rowToCheck][colToCheck];
+        if (getColorOfCell(cellToCheck) === color) {
+            winningCells.push(cellToCheck);
+            colToCheck++;
+        }   else {
+            break;
+        }
+    }
+};
+
 // Event handlers. Zorgen dat de functies kunnen gezien/gecodeert worden
 const handleCellMouseOver = (e)=> {
     const cell = e.target;
@@ -103,6 +141,8 @@ const handleCellClick = (e)=> {
 
     openCell.classList.add(blueIsNext ? 'blue' : 'pink');
     //Nu wanneer je klikt dan gaat het eerste blauwe fiche naar de bodem van het bord
+
+    checkStatusOfGame(openCell);
 
     blueIsNext = !blueIsNext;
     //Dit reversed de kleur van blauw naar roze.
