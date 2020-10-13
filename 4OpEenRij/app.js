@@ -82,7 +82,7 @@ const getColorOfCell = (cell)=> {
 };
 
 const checkWinningCells = (cells) => {
-    if (cells.length < 4) return;
+    if (cells.length < 4) return false;
 
     gameIsLive = false;
     for (const cell of cells) {
@@ -90,6 +90,7 @@ const checkWinningCells = (cells) => {
     }
     statusSpan.textContent = `${blueIsNext ? 'Blauw' : 'Roze'} heeft gewonnen!`
     //Win tekst als er 4 naast elkaar van dezelfde kleur komen.
+    return true;
 };
 
 const checkStatusOfGame = (cell) => {
@@ -121,7 +122,37 @@ const checkStatusOfGame = (cell) => {
             break;
         }//Dit checkt op je van rechts naar links horizontaal kan winnen
     }
-    checkWinningCells(winningCells);
+    let  isWinningCombo = checkWinningCells(winningCells);
+    if (isWinningCombo) return;
+
+
+    //Check Verticaal
+    winningCells = [cell];
+    rowToCheck = rowIndex - 1;
+    colToCheck = colIndex;
+    while (rowToCheck >= 0) {
+        const cellToCheck = rows[rowToCheck][colToCheck];
+        if (getColorOfCell(cellToCheck) === color) {
+            winningCells.push(cellToCheck);
+            rowToCheck--;
+        }   else {
+            break;
+        }//Dit checkt op je van boven naar onder verticaal kan winnen
+    }
+    rowToCheck = rowIndex + 1;
+    while (rowToCheck <= 5) {
+        const cellToCheck = rows[rowToCheck][colToCheck];
+        if (getColorOfCell(cellToCheck) === color) {
+            winningCells.push(cellToCheck);
+            //De methode push voegt nieuwe items toe aan het einde van een array en retourneert de nieuwe lengte.
+            rowToCheck++;
+        }   else {
+            break;
+        }//Dit checkt op je van onder naar boven verticaal kan winnen
+    }
+    isWinningCombo = checkWinningCells(winningCells);
+    if (isWinningCombo) return;
+
 };
 
 
