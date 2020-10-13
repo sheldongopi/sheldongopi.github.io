@@ -153,6 +153,19 @@ const checkStatusOfGame = (cell) => {
     isWinningCombo = checkWinningCells(winningCells);
     if (isWinningCombo) return;
 
+// Check om te zien of er gelijkspel is gespeeld
+    const rowsWithoutTop = rows.slice(0, 6);
+    for (const row of rowsWithoutTop) {
+        for (const cell of row) {
+            const classList = getClassListArray(cell);
+            if (!classList.includes('blue') && !classList.includes('pink')) {
+                return;
+            }
+        }
+    }
+
+    gameIsLive = false;
+    statusSpan.textContent = "Gelijkspel!";
 };
 
 
