@@ -174,7 +174,7 @@ const checkStatusOfGame = (cell) => {
 const handleCellMouseOver = (e)=> {
     if (!gameIsLive) return;
     const cell = e.target;
-    const [colIndex] = getCellLocation(cell);
+    const [rowIndex, colIndex] = getCellLocation(cell);
 
     const topCell = topCells[colIndex];
     if (blueIsNext) {
@@ -187,7 +187,7 @@ const handleCellMouseOver = (e)=> {
 
 const handleCellMouseOut = (e)=> {
     const cell = e.target;
-    const [colIndex] = getCellLocation(cell);
+    const [rowIndex, colIndex] = getCellLocation(cell);
 
     clearColorFromTop(colIndex);
     //Nu elke keer dat je Hovert over het bord dan zal het fiche ook weg gaan
@@ -196,7 +196,7 @@ const handleCellMouseOut = (e)=> {
 const handleCellClick = (e)=> {
     if (!gameIsLive) return;
     const cell = e.target;
-    const [colIndex] = getCellLocation(cell);
+    const [rowIndex, colIndex] = getCellLocation(cell);
 
     const openCell = getFirstOpenCellForColumn(colIndex);
 
